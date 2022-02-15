@@ -68,7 +68,7 @@ class _MyDialPadWidget extends State<DialPadWidget>
       return null;
     }
 
-    final mediaConstraints = <String, dynamic>{'audio': true, 'video': true};
+    final mediaConstraints = <String, dynamic>{'audio': true, 'video': false};
 
     MediaStream mediaStream;
 

@@ -213,7 +213,7 @@ class _MyCallScreenWidget extends State<CallScreenWidget>
     bool remote_has_video = call!.remote_has_video;
     final mediaConstraints = <String, dynamic>{
       'audio': true,
-      'video': remote_has_video
+      'video': false,
     };
     MediaStream mediaStream;
 
@@ -509,7 +509,7 @@ class _MyCallScreenWidget extends State<CallScreenWidget>
     if (!voiceonly && _localStream != null) {
       stackWidgets.add(Container(
         child: AnimatedContainer(
-          child: RTCVideoView(_localRenderer!),
+          child: RTCVideoView(_localRenderer!, mirror: true,),
           height: _localVideoHeight,
           width: _localVideoWidth,
           alignment: Alignment.topRight,
